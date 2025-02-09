@@ -1,6 +1,20 @@
+notion:
+  url:
+    block:
+      children: ${NOTION_URL_BLOCK_CHILDREN}
+  auth:
+    token: ${TOKEN}
 feign:
-  blocks:
-    children: ${BLOCK_CHILDREN_URL}
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+logging:
+  level:
+    org.springframework.cloud.openfeign: DEBUG
+    feign: DEBUG
 spring:
   application:
   name: mnemosine-service
