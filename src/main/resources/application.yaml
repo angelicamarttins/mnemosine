@@ -1,0 +1,7 @@
+feign:
+  blocks:
+    children: ${BLOCK_CHILDREN_URL}
+spring:
+  application:
+  name: mnemosine-service
+
