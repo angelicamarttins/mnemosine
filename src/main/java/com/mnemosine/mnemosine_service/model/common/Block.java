@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.mnemosine.mnemosine_service.model.blocks.BookmarkBlock;
+import com.mnemosine.mnemosine_service.model.blocks.BreadcrumbBlock;
 import com.mnemosine.mnemosine_service.model.blocks.ParagraphBlock;
 
 import java.time.ZonedDateTime;
@@ -11,7 +12,8 @@ import java.time.ZonedDateTime;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
     @JsonSubTypes.Type(value = ParagraphBlock.class, name = "paragraph"),
-    @JsonSubTypes.Type(value = BookmarkBlock.class, name = "bookmark")
+    @JsonSubTypes.Type(value = BookmarkBlock.class, name = "bookmark"),
+    @JsonSubTypes.Type(value = BreadcrumbBlock.class, name = "breadcrumb")
 })
 public class Block {
   protected String object;
