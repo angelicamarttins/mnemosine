@@ -10,14 +10,12 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
-public class ParagraphBlock extends Block {
-  private Paragraph paragraph;
+public class BookmarkBlock extends Block {
+  private Bookmark bookmark;
 
   @Getter
-  private static class Paragraph {
-    @JsonProperty("rich_text")
-    private List<RichText> richText;
-    private String color;
+  private static class Bookmark {
+    private List<RichText> caption;
+    private String url;
   }
 }
-
