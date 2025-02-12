@@ -11,15 +11,14 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
-public class BulletedListItemBlock extends Block {
-  @JsonProperty("bulleted_list_item")
-  private BulletedListItem bulletedListItem;
+public class CalloutBlock extends Block {
+  private Callout callout;
 
   @Getter
-  private static class BulletedListItem {
+  private static class Callout {
     @JsonProperty("rich_text")
-    private List<RichText> rickText;
+    private List<RichText> richText;
+    private NotionIcon icon;
     private Color color;
-    private List<Block> children;
   }
 }

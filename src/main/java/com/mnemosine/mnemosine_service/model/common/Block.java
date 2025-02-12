@@ -3,10 +3,7 @@ package com.mnemosine.mnemosine_service.model.common;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.mnemosine.mnemosine_service.model.blocks.BookmarkBlock;
-import com.mnemosine.mnemosine_service.model.blocks.BreadcrumbBlock;
-import com.mnemosine.mnemosine_service.model.blocks.BulletedListItemBlock;
-import com.mnemosine.mnemosine_service.model.blocks.ParagraphBlock;
+import com.mnemosine.mnemosine_service.model.blocks.*;
 
 import java.time.ZonedDateTime;
 
@@ -15,7 +12,8 @@ import java.time.ZonedDateTime;
     @JsonSubTypes.Type(value = ParagraphBlock.class, name = "paragraph"),
     @JsonSubTypes.Type(value = BookmarkBlock.class, name = "bookmark"),
     @JsonSubTypes.Type(value = BreadcrumbBlock.class, name = "breadcrumb"),
-    @JsonSubTypes.Type(value = BulletedListItemBlock.class, name = "bulleted_list_item")
+    @JsonSubTypes.Type(value = BulletedListItemBlock.class, name = "bulleted_list_item"),
+    @JsonSubTypes.Type(value = CalloutBlock.class, name = "callout")
 })
 public class Block {
   protected String object;
